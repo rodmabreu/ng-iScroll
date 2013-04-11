@@ -3,11 +3,12 @@ angular.module('ng-iscroll', []).directive('ngIscroll', function() {
 		replace: false,
 		restrict: 'A',
 		link: function(scope, element, attr){
+			var wrapper = element[0];
 			
 			var ngScroll_timeout = 5;
 			
 			function setScroll() {
-				myScroll = new iScroll(document.getElementById('wrapper'), {
+				myScroll = new iScroll(wrapper, {
 					nap: true,
 					momentum: true,
 					hScrollbar: false
